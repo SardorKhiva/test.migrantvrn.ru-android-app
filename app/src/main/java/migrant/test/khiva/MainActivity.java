@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         myWebView.getSettings().setJavaScriptEnabled(true);
         myWebView.loadUrl("file:///android_asset/index.html");
 
-        // Используем современный OnBackPressedDispatcher
+        // chiqish uchun zamonaviy (Android 13 dan keyingilar) OnBackPressedDispatcher
         getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
             @Override
             public void handleOnBackPressed() {
