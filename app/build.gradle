@@ -3,6 +3,17 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        debug {
+
+        }
+        release {
+            storeFile file('C:\\Users\\User\\key_26_07_2025.jks')
+            storePassword 'keykeykey'
+            keyAlias 'key'
+            keyPassword 'keykeykey'
+        }
+    }
     namespace 'migrant.test.khiva'
     compileSdk 35
 
@@ -21,6 +32,8 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            renderscriptOptimLevel 3
+            signingConfig signingConfigs.release
         }
     }
     compileOptions {
@@ -30,6 +43,7 @@ android {
     buildFeatures {
         viewBinding true
     }
+    buildToolsVersion '30.0.3'
 }
 
 dependencies {
