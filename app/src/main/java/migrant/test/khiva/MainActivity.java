@@ -34,12 +34,27 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /*  standart - dasturdan chiqqandan keyin ham dastur ishlab turadi fonda
     private void showExitDialog() {
         new AlertDialog.Builder(this)
                 .setTitle("Выход")
                 .setMessage("Вы действительно хотите выйти из приложения?")
                 .setPositiveButton("Да", (dialog, which) -> finish())
                 .setNegativeButton("Нет", null)
+                .show();
+    }
+     */
+
+    // dasturdan to'laqonli chiqish (fonda ishlab turmay akkumulyatorni tejashi uchun)
+    private void showExitDialog() {
+        new AlertDialog.Builder(this)
+                .setTitle("Чиқиш")
+                .setMessage("Чиқасизми? | Выход?")
+                .setPositiveButton("Ҳа", (dialog, which) -> {
+                    finishAffinity();      // hamma aktivitilarni yopadi
+                    System.exit(0);  // protsessni tugatadi
+                })
+                .setNegativeButton("Йўқ", null)
                 .show();
     }
 }
